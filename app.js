@@ -9,6 +9,26 @@
     });
   }
   function firstToken(s) { return String(s || "").trim().split(/\s+/)[0] || ""; }
+  // Heal date/time cells that got exported as raw JS Date objects
+  // ("Sat Dec 30 1899 15:00:00 GMT-0700 (...)" -> "3:00 PM"; "Thu Jul 18 2026 ..." -> "Jul 18").
+  // Reads the wall-clock values straight from the string, so it's timezone-independent.
+  function cleanDateish(s) {
+    var m = String(s == null ? "" : s).match(/^[A-Za-z]{3} ([A-Za-z]{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):/);
+    if (!m) return s;
+    var mon = m[1], day = String(parseInt(m[2], 10)), year = parseInt(m[3], 10), hh = parseInt(m[4], 10), mm = m[5];
+    if (year <= 1900) { var ap = hh < 12 ? "AM" : "PM"; var h = hh % 12; if (h === 0) h = 12; return h + ":" + mm + " " + ap; }
+    return mon + " " + day;
+  }
+  function normalizeDates_(data) {
+    (data.travelers || []).forEach(function (t) {
+      t.arrivalTime = cleanDateish(t.arrivalTime);
+      t.departureTime = cleanDateish(t.departureTime);
+    });
+    (data.plan || []).forEach(function (p) {
+      p.date = cleanDateish(p.date); p.start = cleanDateish(p.start); p.stop = cleanDateish(p.stop);
+    });
+    return data;
+  }
   function hasEmoji(s) {
     try { return /\p{Extended_Pictographic}/u.test(s); }
     catch (e) { return /[☀-➿✈\uD83C-\uDBFF]/.test(s); }
@@ -189,7 +209,7 @@
   }
 
   function buildHTML(data) {
-    data = data || {};
+    data = normalizeDates_(data || {});
     return '<div class="wrap">' +
       renderHero(data.hero) +
       '<div class="sec-title"><h2>The Crew</h2><span class="rule"></span></div>' +
@@ -234,6 +254,6 @@
   }
 
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { buildHTML: buildHTML, buildEvents: buildEvents, iconFor: iconFor, parseOption: parseOption };
+    module.exports = { buildHTML: buildHTML, buildEvents: buildEvents, iconFor: iconFor, parseOption: parseOption, cleanDateish: cleanDateish };
   }
 })(this);
