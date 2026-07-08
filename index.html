@@ -1,0 +1,390 @@
+<meta name="robots" content="noindex, nofollow">
+<title>Vegas 2026 — The Crew</title>
+<style>
+  :root {
+    color-scheme: dark;
+    --night: #17092e;
+    --night-2: #250c47;
+    --surface: rgba(255,255,255,0.045);
+    --surface-2: rgba(255,255,255,0.07);
+    --ink: #f6efff;
+    --ink-soft: #c3b1e6;
+    --ink-faint: #8f7db8;
+    --pink: #ff3d8b;
+    --cyan: #22e3ff;
+    --gold: #ffd24a;
+    --line: rgba(255,255,255,0.11);
+    --line-strong: rgba(255,255,255,0.2);
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    font-family: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+    background:
+      radial-gradient(120% 80% at 50% -10%, #3a1466 0%, rgba(58,20,102,0) 55%),
+      radial-gradient(90% 60% at 100% 0%, rgba(34,227,255,0.14) 0%, rgba(34,227,255,0) 50%),
+      radial-gradient(90% 60% at 0% 5%, rgba(255,61,139,0.16) 0%, rgba(255,61,139,0) 50%),
+      linear-gradient(180deg, var(--night-2) 0%, var(--night) 60%, #0e0620 100%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 18px 64px; }
+
+  /* ---------- Marquee hero ---------- */
+  header { text-align: center; padding: 40px 0 8px; }
+  .eyebrow {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.36em; text-transform: uppercase;
+    color: var(--cyan); margin: 0 0 18px; padding-left: 0.36em;
+    text-shadow: 0 0 12px rgba(34,227,255,0.6);
+  }
+  .marquee {
+    display: inline-block; padding: 4px 8px; position: relative;
+  }
+  h1 {
+    font-family: "Arial Black", "Helvetica Neue", Impact, sans-serif;
+    font-weight: 900; font-size: clamp(52px, 17vw, 104px); line-height: 0.86;
+    letter-spacing: -0.02em; margin: 0; text-wrap: balance;
+    color: #fff5fb;
+    text-shadow:
+      0 0 6px #fff,
+      0 0 18px var(--pink),
+      0 0 38px var(--pink),
+      0 0 70px rgba(255,61,139,0.7);
+    animation: flicker 6s infinite;
+  }
+  h1 .yr {
+    color: #eafcff;
+    text-shadow:
+      0 0 6px #fff,
+      0 0 18px var(--cyan),
+      0 0 40px var(--cyan),
+      0 0 72px rgba(34,227,255,0.7);
+  }
+  @keyframes flicker {
+    0%,19%,21%,23%,80%,100% { opacity: 1; }
+    20%,22% { opacity: 0.55; }
+    82% { opacity: 0.7; }
+  }
+  @media (prefers-reduced-motion: reduce) { h1 { animation: none; } }
+
+  .bulbs { display:flex; justify-content:center; gap:10px; margin:20px 0 6px; }
+  .bulbs i {
+    width:8px; height:8px; border-radius:50%; background: var(--gold);
+    box-shadow: 0 0 10px var(--gold), 0 0 20px rgba(255,210,74,0.6);
+    animation: chase 1.6s infinite; opacity: .3;
+  }
+  .bulbs i:nth-child(2){ animation-delay:.2s } .bulbs i:nth-child(3){ animation-delay:.4s }
+  .bulbs i:nth-child(4){ animation-delay:.6s } .bulbs i:nth-child(5){ animation-delay:.8s }
+  .bulbs i:nth-child(6){ animation-delay:1s } .bulbs i:nth-child(7){ animation-delay:1.2s }
+  @keyframes chase { 0%,100%{opacity:.25} 50%{opacity:1} }
+  @media (prefers-reduced-motion: reduce) { .bulbs i { animation:none; opacity:.7 } }
+
+  .dates {
+    font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600;
+    color: var(--ink-soft); margin: 10px 0 0;
+  }
+  .homebase {
+    font-size: 13.5px; color: var(--ink-faint); margin: 6px 0 0;
+  }
+  .homebase b { color: var(--gold); font-weight: 700; letter-spacing:.04em; }
+  .occasion {
+    font-size: 12.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--pink); margin: 10px 0 0; text-shadow: 0 0 12px rgba(255,61,139,0.5);
+  }
+
+  /* ---------- Countdown ---------- */
+  .count {
+    display: inline-flex; align-items: baseline; gap: 9px;
+    margin: 26px auto 0; padding: 10px 20px;
+    background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px;
+    backdrop-filter: blur(6px);
+  }
+  .count .n {
+    font-size: 26px; font-weight: 900; font-variant-numeric: tabular-nums;
+    color: #fff; text-shadow: 0 0 14px rgba(255,210,74,.8); letter-spacing: -0.01em;
+  }
+  .count .lbl { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); }
+
+  /* ---------- Section titles ---------- */
+  .sec-title {
+    display:flex; align-items:center; gap:14px; margin: 48px 0 18px;
+  }
+  .sec-title h2 {
+    font-family: "Arial Black", "Helvetica Neue", sans-serif;
+    font-size: 15px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase;
+    margin: 0; color: var(--ink); white-space: nowrap;
+  }
+  .sec-title .rule { flex:1; height:1px; background: linear-gradient(90deg, var(--line-strong), transparent); }
+
+  /* ---------- Crew ---------- */
+  .couple-label {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink);
+    margin: 18px 0 8px; font-weight: 700;
+  }
+  .crew { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .person {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+    padding: 15px 16px; position: relative; overflow: hidden;
+  }
+  .person::after {
+    content:""; position:absolute; inset:0 0 auto 0; height:2px;
+    background: linear-gradient(90deg, var(--pink), var(--cyan));
+    opacity:.7;
+  }
+  .person .nm { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
+  .person .row { display:flex; gap:8px; align-items:baseline; margin-top:9px; font-size:13px; }
+  .person .row .ic { width:16px; color: var(--cyan); flex:0 0 16px; }
+  .person .row.out .ic { color: var(--pink); }
+  .person .row .txt { color: var(--ink-soft); }
+  .person .row .txt b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+  .person.tbd .nm { color: var(--ink); }
+  .person.tbd .todo {
+    margin-top:9px; font-size:12.5px; color: var(--ink-faint); font-style: italic;
+  }
+
+  /* ---------- Timeline ---------- */
+  .day { margin-top: 8px; }
+  .day + .day { margin-top: 4px; }
+  .event {
+    display: grid; grid-template-columns: 88px 1fr; gap: 14px;
+    padding: 13px 0; border-top: 1px solid var(--line);
+  }
+  .event:first-child { border-top: none; }
+  .event .when { padding-top: 2px; }
+  .event .dow {
+    font-weight: 800; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink);
+  }
+  .event .date { font-size: 12px; color: var(--ink-faint); margin-top:1px; font-variant-numeric: tabular-nums; }
+  .event .body { }
+  .event .headline { font-weight: 700; font-size: 16px; letter-spacing: -0.01em; }
+  .event .meta { font-size: 13px; color: var(--ink-soft); margin-top: 3px; }
+  .event .meta .who {
+    display:inline-block; margin-left: 4px;
+    font-size: 11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color: var(--cyan);
+  }
+  .event.open .headline { color: var(--ink-faint); font-weight: 600; font-style: italic; }
+  /* Marquee events */
+  .event.star .body {
+    background: linear-gradient(135deg, rgba(255,61,139,0.14), rgba(34,227,255,0.10));
+    border: 1px solid var(--line-strong); border-radius: 14px; padding: 12px 14px;
+    margin: -2px 0;
+  }
+  .event.star .tag {
+    display:inline-block; font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 6px; text-shadow: 0 0 10px rgba(255,210,74,.5);
+  }
+  .event.star .headline { font-size: 18px; font-weight: 800; }
+
+  /* ---------- Link chips ---------- */
+  .links { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+  .chip {
+    display:inline-flex; align-items:center; gap:5px; text-decoration:none;
+    font-size:11px; font-weight:800; letter-spacing:.04em; text-transform:uppercase;
+    color: var(--cyan); border:1px solid var(--line-strong); border-radius:999px;
+    padding:6px 12px; background: var(--surface); transition: box-shadow .15s, border-color .15s;
+  }
+  .chip:hover { border-color: var(--cyan); box-shadow:0 0 14px rgba(34,227,255,.3); }
+  .chip.menu { color: var(--gold); }
+  .chip.menu:hover { border-color: var(--gold); box-shadow:0 0 14px rgba(255,210,74,.3); }
+  /* voting picks (undecided dinner) */
+  .picks { display:grid; gap:9px; margin-top:12px; }
+  .pick {
+    display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px;
+    padding:10px 12px; background: rgba(255,255,255,0.045);
+    border:1px solid var(--line); border-radius:12px;
+  }
+  .pick .pname { font-weight:800; font-size:14.5px; letter-spacing:-0.01em; }
+  .pick .pcuis { font-size:12px; color:var(--ink-faint); }
+  .pick .spacer { flex:1 1 auto; }
+  /* undecided venue options (no links yet) */
+  .opts { display:flex; flex-wrap:wrap; gap:8px; margin-top:11px; }
+  .opt {
+    font-size:12px; font-weight:700; letter-spacing:.02em; color: var(--ink-soft);
+    border:1px dashed var(--line-strong); border-radius:999px;
+    padding:6px 13px; background: rgba(255,255,255,0.03);
+  }
+  .opt.lead { color: var(--gold); border-style: solid; border-color: color-mix(in srgb, var(--gold) 45%, transparent); }
+
+  /* ---------- Footer ---------- */
+  .foot {
+    margin-top: 44px; text-align:center; padding: 26px 20px;
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+  }
+  .foot p { margin: 0 0 16px; color: var(--ink-soft); font-size: 14px; }
+  .btn {
+    display:inline-block; text-decoration:none; font-weight:800; font-size:14px; letter-spacing:.02em;
+    color:#140b26; background: linear-gradient(90deg, var(--gold), #ffe488);
+    padding: 12px 22px; border-radius: 999px;
+    box-shadow: 0 0 24px rgba(255,210,74,.35);
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .stamp {
+    margin-top: 26px; text-align:center; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--ink-faint);
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">The crew takes the strip</p>
+    <div class="marquee"><h1>VEGAS<br><span class="yr">2026</span></h1></div>
+    <div class="bulbs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <p class="dates">Jul 16 – 20, 2026</p>
+    <p class="homebase">Home base — <b>ARIA</b></p>
+    <p class="occasion">🎂 Celebrating Chris</p>
+    <div class="count"><span class="n" id="cd">—</span><span class="lbl" id="cdl">sleeps till Vegas</span></div>
+  </header>
+
+  <div class="sec-title"><h2>The Crew</h2><span class="rule"></span></div>
+
+  <p class="couple-label">◆ Chris &amp; Claire</p>
+  <div class="crew">
+    <div class="person">
+      <div class="nm">Chris</div>
+      <div class="row"><span class="ic">✈</span><span class="txt">In <b>Thu 8:08 PM</b></span></div>
+      <div class="row out"><span class="ic">✈</span><span class="txt">Out <b>Mon 4:25 PM</b></span></div>
+    </div>
+    <div class="person">
+      <div class="nm">Claire</div>
+      <div class="row"><span class="ic">✈</span><span class="txt">In <b>Thu 8:08 PM</b></span></div>
+      <div class="row out"><span class="ic">✈</span><span class="txt">Out <b>Mon 4:25 PM</b></span></div>
+    </div>
+  </div>
+
+  <p class="couple-label">◆ Jake &amp; Mal</p>
+  <div class="crew">
+    <div class="person tbd">
+      <div class="nm">Jake</div>
+      <div class="todo">Drop your flights in the sheet →</div>
+    </div>
+    <div class="person tbd">
+      <div class="nm">Mal</div>
+      <div class="todo">Drop your flights in the sheet →</div>
+    </div>
+  </div>
+
+  <div class="sec-title"><h2>The Weekend</h2><span class="rule"></span></div>
+
+  <div class="day">
+    <div class="event">
+      <div class="when"><div class="dow">Thu</div><div class="date">Jul 16</div></div>
+      <div class="body">
+        <div class="headline">Chris &amp; Claire land ✈</div>
+        <div class="meta">Touch down 8:08 PM · scoop up and head to the Aria</div>
+      </div>
+    </div>
+    <div class="event star">
+      <div class="when"><div class="dow">Fri</div><div class="date">Jul 17</div></div>
+      <div class="body">
+        <span class="tag">🎂 Birthday dinner · undecided</span>
+        <div class="headline">Chris's birthday dinner — cast a vote</div>
+        <div class="meta">Four Arts District contenders. Tap a menu, then call it in the group chat.</div>
+        <div class="picks">
+          <div class="pick">
+            <span class="pname">Bar Boheme</span><span class="pcuis">French · raw bar</span>
+            <span class="spacer"></span>
+            <a class="chip" href="https://barbohemelv.com/" target="_blank" rel="noopener">Site ↗</a>
+            <a class="chip menu" href="https://barbohemelv.com/notre-carte/" target="_blank" rel="noopener">Menu ↗</a>
+          </div>
+          <div class="pick">
+            <span class="pname">Main St. Provisions</span><span class="pcuis">Steak &amp; seafood</span>
+            <span class="spacer"></span>
+            <a class="chip" href="https://www.mainstprovisions.com/" target="_blank" rel="noopener">Site ↗</a>
+            <a class="chip menu" href="https://www.mainstprovisions.com/menu" target="_blank" rel="noopener">Menu ↗</a>
+          </div>
+          <div class="pick">
+            <span class="pname">Ada's</span><span class="pcuis">Wine bar · small plates</span>
+            <span class="spacer"></span>
+            <a class="chip" href="https://www.adaslv.com/" target="_blank" rel="noopener">Site ↗</a>
+          </div>
+          <div class="pick">
+            <span class="pname">Taverna Costera</span><span class="pcuis">Coastal Mediterranean</span>
+            <span class="spacer"></span>
+            <a class="chip" href="https://tavernacostera.com/" target="_blank" rel="noopener">Site ↗</a>
+            <a class="chip menu" href="https://tavernacostera.com/las-vegas-arts-district-taverna-costera-food-menu" target="_blank" rel="noopener">Menu ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="when"><div class="dow">Fri</div><div class="date">Jul 17</div></div>
+      <div class="body">
+        <div class="headline">Doberman 🍸</div>
+        <div class="meta">Cocktails after dinner</div>
+        <div class="links">
+          <a class="chip" href="https://www.dobermandtlv.com/" target="_blank" rel="noopener">Site ↗</a>
+          <a class="chip menu" href="https://www.dobermandtlv.com/menu" target="_blank" rel="noopener">Menu ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="when"><div class="dow">Fri</div><div class="date">Jul 17</div></div>
+      <div class="body">
+        <div class="headline">Craft Creamery Speakeasy 🍦</div>
+        <div class="meta">Dessert · hidden ice-cream speakeasy</div>
+        <div class="links">
+          <a class="chip" href="https://www.craftcreamerylv.com/" target="_blank" rel="noopener">Site ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="when"><div class="dow">Sat</div><div class="date">Jul 18</div></div>
+      <div class="body">
+        <div class="headline">World Cup 3rd-place game ⚽</div>
+        <div class="meta">Kickoff <b>2:00 PM Vegas</b> (5 PM ET) · match's in Miami — watch spot still up for a vote <span class="who">· whole crew</span></div>
+        <div class="opts"><span class="opt lead">Fontainebleau</span><span class="opt">Sahara pool</span><span class="opt">Sports bar</span></div>
+      </div>
+    </div>
+    <div class="event star">
+      <div class="when"><div class="dow">Sat</div><div class="date">Jul 18</div></div>
+      <div class="body">
+        <span class="tag">★ Main Event · 8:00 PM</span>
+        <div class="headline">Backstreet Boys at the Sphere 🎤</div>
+        <div class="meta">Showtime <b>8:00 PM</b> · doors ~7:15 — leave time for security <span class="who">· whole crew</span></div>
+        <div class="links"><a class="chip" href="https://www.thesphere.com/shows/backstreet-boys" target="_blank" rel="noopener">Show page ↗</a></div>
+      </div>
+    </div>
+    <div class="event star">
+      <div class="when"><div class="dow">Sun</div><div class="date">Jul 19</div></div>
+      <div class="body">
+        <span class="tag">★ Main Event · Noon</span>
+        <div class="headline">World Cup Final watch party ⚽</div>
+        <div class="meta">Kickoff <b>12:00 PM Vegas</b> (3 PM ET) · grab spots at the Mandalay Bay Tailgate pool by ~11 <span class="who">· whole crew</span></div>
+      </div>
+    </div>
+    <div class="event">
+      <div class="when"><div class="dow">Mon</div><div class="date">Jul 20</div></div>
+      <div class="body">
+        <div class="headline">Chris &amp; Claire fly home</div>
+        <div class="meta">Check out of the Aria · wheels up 4:25 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Different people, different reservations — dinners, clubs, cabanas.<br>Add yours so nobody double-books the night.</p>
+    <a class="btn" href="https://docs.google.com/spreadsheets/d/1NrveHl0gwmjg1RVo31HRkXDiYMDZDYc86xbL4yWtBNM/edit" target="_blank" rel="noopener">Open the planning sheet →</a>
+  </div>
+
+  <p class="stamp">What happens in Vegas · goes in the group chat</p>
+</div>
+
+<script>
+  (function () {
+    var target = new Date(2026, 6, 16); // Jul 16 2026, local
+    var now = new Date();
+    var msPerDay = 86400000;
+    var t0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.round((target - t0) / msPerDay);
+    var n = document.getElementById('cd');
+    var l = document.getElementById('cdl');
+    if (days > 1) { n.textContent = days; l.textContent = 'sleeps till Vegas'; }
+    else if (days === 1) { n.textContent = 1; l.textContent = 'sleep till Vegas'; }
+    else if (days === 0) { n.textContent = "IT'S"; l.textContent = 'Vegas day, baby'; }
+    else { n.textContent = '✦'; l.textContent = 'viva las vegas'; }
+  })();
+</script>
