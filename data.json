@@ -10,27 +10,231 @@
     "sheetUrl": "https://docs.google.com/spreadsheets/d/1NrveHl0gwmjg1RVo31HRkXDiYMDZDYc86xbL4yWtBNM/edit"
   },
   "travelers": [
-    { "name": "Chris",  "couple": "Chris & Claire", "arrives": "Thu Jul 16", "arrivalTime": "8:08 PM", "departs": "Mon Jul 20", "departureTime": "4:25 PM" },
-    { "name": "Claire", "couple": "Chris & Claire", "arrives": "Thu Jul 16", "arrivalTime": "8:08 PM", "departs": "Mon Jul 20", "departureTime": "4:25 PM" },
-    { "name": "Jake",   "couple": "Jake & Mal",     "arrives": "", "arrivalTime": "", "departs": "", "departureTime": "" },
-    { "name": "Mal",    "couple": "Jake & Mal",     "arrives": "", "arrivalTime": "", "departs": "", "departureTime": "" }
+    {
+      "name": "Chris",
+      "couple": "Chris & Claire",
+      "arrives": "Thu Jul 16 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "arrivalTime": "Sat Dec 30 1899 21:08:00 GMT-0700 (Mountain Standard Time)",
+      "departs": "Mon Jul 20 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "departureTime": "Sat Dec 30 1899 17:25:00 GMT-0700 (Mountain Standard Time)"
+    },
+    {
+      "name": "Claire",
+      "couple": "Chris & Claire",
+      "arrives": "Thu Jul 16 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "arrivalTime": "Sat Dec 30 1899 21:08:00 GMT-0700 (Mountain Standard Time)",
+      "departs": "Mon Jul 20 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "departureTime": "Sat Dec 30 1899 17:25:00 GMT-0700 (Mountain Standard Time)"
+    },
+    {
+      "name": "Jake",
+      "couple": "Jake & Mal",
+      "arrives": "",
+      "arrivalTime": "",
+      "departs": "",
+      "departureTime": ""
+    },
+    {
+      "name": "Mal",
+      "couple": "Jake & Mal",
+      "arrives": "",
+      "arrivalTime": "",
+      "departs": "",
+      "departureTime": ""
+    }
   ],
   "plan": [
-    { "day": "Thu", "date": "Jul 16", "activity": "Chris & Claire land", "place": "LAS", "start": "8:08 PM", "stop": "", "who": "", "website": "", "menu": "", "notes": "Head to Aria after" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Chill at the pool", "place": "Kassi Beach House", "start": "11:00 AM", "stop": "", "who": "", "website": "", "menu": "", "notes": "" },
-    { "day": "Fri", "date": "Jul 17", "activity": "🎂 Birthday dinner", "place": "Arts District", "start": "", "stop": "", "who": "Chris", "website": "", "menu": "", "notes": "Undecided — tap a menu & vote" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Option — Bar Boheme", "place": "1401 S Main St", "start": "", "stop": "", "who": "", "website": "https://barbohemelv.com/", "menu": "https://barbohemelv.com/notre-carte/", "notes": "French · raw bar" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Option — Main St. Provisions", "place": "1214 S Main St", "start": "", "stop": "", "who": "", "website": "https://www.mainstprovisions.com/", "menu": "https://www.mainstprovisions.com/menu", "notes": "Steak & seafood" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Option — Ada's", "place": "1130 S Casino Center Dr", "start": "", "stop": "", "who": "", "website": "https://www.adaslv.com/", "menu": "", "notes": "Wine bar · small plates" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Option — Taverna Costera", "place": "1031 S Main St", "start": "", "stop": "", "who": "", "website": "https://tavernacostera.com/", "menu": "https://tavernacostera.com/las-vegas-arts-district-taverna-costera-food-menu", "notes": "Coastal Mediterranean" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Drinks", "place": "Doberman", "start": "6:00 PM", "stop": "", "who": "Mal", "website": "https://www.dobermandtlv.com/", "menu": "https://www.dobermandtlv.com/menu", "notes": "Cocktails" },
-    { "day": "Fri", "date": "Jul 17", "activity": "Craft Creamery Speakeasy", "place": "", "start": "", "stop": "", "who": "", "website": "https://www.craftcreamerylv.com/", "menu": "", "notes": "Dessert · ice-cream speakeasy" },
-    { "day": "Sat", "date": "Jul 18", "activity": "World Cup 3rd-place game", "place": "Fontainebleau?", "start": "2:00 PM", "stop": "", "who": "Group", "website": "", "menu": "", "notes": "Kickoff 2 PM Vegas (5 PM ET) · match in Miami — watch spot up for a vote" },
-    { "day": "Sat", "date": "Jul 18", "activity": "Option — Fontainebleau", "place": "", "start": "", "stop": "", "who": "", "website": "", "menu": "", "notes": "" },
-    { "day": "Sat", "date": "Jul 18", "activity": "Option — Sahara pool", "place": "", "start": "", "stop": "", "who": "", "website": "", "menu": "", "notes": "" },
-    { "day": "Sat", "date": "Jul 18", "activity": "Option — Sports bar", "place": "", "start": "", "stop": "", "who": "", "website": "", "menu": "", "notes": "" },
-    { "day": "Sat", "date": "Jul 18", "activity": "★ Backstreet Boys at the Sphere", "place": "Sphere", "start": "8:00 PM", "stop": "", "who": "Group", "website": "https://www.thesphere.com/shows/backstreet-boys", "menu": "", "notes": "Doors ~7:15 — leave time for security" },
-    { "day": "Sun", "date": "Jul 19", "activity": "★ World Cup Final watch party", "place": "Tailgate @ Mandalay Bay", "start": "12:00 PM", "stop": "", "who": "Group", "website": "", "menu": "", "notes": "Kickoff 12:00 PM Vegas (3 PM ET) · grab spots by ~11" },
-    { "day": "Mon", "date": "Jul 20", "activity": "Chris & Claire fly home", "place": "LAS", "start": "", "stop": "4:25 PM", "who": "", "website": "", "menu": "", "notes": "Check out of Aria first" }
+    {
+      "day": "Thu",
+      "date": "Thu Jul 16 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Chris & Claire land",
+      "place": "LAS",
+      "start": "Sat Dec 30 1899 21:08:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "",
+      "website": "",
+      "menu": "",
+      "notes": "Head to Aria after"
+    },
+    {
+      "day": "",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Chill at Pool",
+      "place": "Kassi",
+      "start": "Sat Dec 30 1899 12:00:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "",
+      "website": "",
+      "menu": "https://www.kassibeach.com/menus/#pool",
+      "notes": ""
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "🎂 Birthday dinner — VOTE (undecided)",
+      "place": "Arts District",
+      "start": "",
+      "stop": "",
+      "who": "Chris",
+      "website": "",
+      "menu": "",
+      "notes": "Pick one of the 4 options below"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Option — Bar Boheme",
+      "place": "1401 S Main St",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "https://barbohemelv.com/",
+      "menu": "https://barbohemelv.com/notre-carte/",
+      "notes": "French · raw bar"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Option — Main St. Provisions",
+      "place": "1214 S Main St",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "https://www.mainstprovisions.com/",
+      "menu": "https://www.mainstprovisions.com/menu",
+      "notes": "Steak & seafood"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Option — Ada's",
+      "place": "1130 S Casino Center Dr",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "https://www.adaslv.com/",
+      "menu": "",
+      "notes": "Wine bar · small plates"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Option — Taverna Costera",
+      "place": "1031 S Main St",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "https://tavernacostera.com/",
+      "menu": "https://tavernacostera.com/las-vegas-arts-district-taverna-costera-food-menu",
+      "notes": "Coastal Mediterranean"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Drinks",
+      "place": "Doberman",
+      "start": "Sat Dec 30 1899 19:00:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "Mal",
+      "website": "https://www.dobermandtlv.com/",
+      "menu": "https://www.dobermandtlv.com/menu",
+      "notes": "Cocktails after dinner"
+    },
+    {
+      "day": "Fri",
+      "date": "Fri Jul 17 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Craft Creamery Speakeasy",
+      "place": "",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "https://www.craftcreamerylv.com/",
+      "menu": "",
+      "notes": "Dessert · ice-cream speakeasy"
+    },
+    {
+      "day": "Sat",
+      "date": "Sat Jul 18 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "World Cup 3rd-place game (watch)",
+      "place": "Fontainebleau?",
+      "start": "Sat Dec 30 1899 15:00:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "Group",
+      "website": "",
+      "menu": "",
+      "notes": "Kickoff 2 PM Vegas / 5 PM ET · match in Miami · leaning Fontainebleau"
+    },
+    {
+      "day": "",
+      "date": "",
+      "activity": "Option — Fontainebleu",
+      "place": "",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "",
+      "menu": "",
+      "notes": ""
+    },
+    {
+      "day": "",
+      "date": "",
+      "activity": "Option — Sahara Pool",
+      "place": "",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "",
+      "menu": "",
+      "notes": ""
+    },
+    {
+      "day": "",
+      "date": "",
+      "activity": "Option — Sports bar",
+      "place": "",
+      "start": "",
+      "stop": "",
+      "who": "",
+      "website": "",
+      "menu": "",
+      "notes": ""
+    },
+    {
+      "day": "Sat",
+      "date": "Sat Jul 18 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "★ Backstreet Boys @ Sphere",
+      "place": "Sphere",
+      "start": "Sat Dec 30 1899 21:00:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "Group",
+      "website": "https://www.thesphere.com/shows/backstreet-boys",
+      "menu": "",
+      "notes": "Doors ~7:15 — leave time for security"
+    },
+    {
+      "day": "Sun",
+      "date": "Sun Jul 19 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "★ World Cup Final watch party",
+      "place": "Tailgate @ Mandalay Bay",
+      "start": "Sat Dec 30 1899 13:00:00 GMT-0700 (Mountain Standard Time)",
+      "stop": "",
+      "who": "Group",
+      "website": "",
+      "menu": "",
+      "notes": "Kickoff noon Vegas (3 PM ET) · get there by ~11"
+    },
+    {
+      "day": "Mon",
+      "date": "Mon Jul 20 2026 01:00:00 GMT-0600 (Mountain Daylight Time)",
+      "activity": "Chris & Claire fly home",
+      "place": "LAS",
+      "start": "",
+      "stop": "Sat Dec 30 1899 17:25:00 GMT-0700 (Mountain Standard Time)",
+      "who": "",
+      "website": "",
+      "menu": "",
+      "notes": "Check out of Aria first"
+    }
   ]
 }
