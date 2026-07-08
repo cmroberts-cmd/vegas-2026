@@ -60,10 +60,11 @@
       });
       return h + "</div>";
     }
-    var lead = String(parentRow.place || "").replace(/\?$/, "").trim().toLowerCase();
+    var pk = String(parentRow.place || "").toLowerCase().replace(/[^a-z]/g, "");
     var h2 = '<div class="opts">';
     options.forEach(function (o) {
-      var isLead = lead && o.name.toLowerCase() === lead;
+      var on = String(o.name || "").toLowerCase().replace(/[^a-z]/g, "");
+      var isLead = pk && on && (pk.indexOf(on) === 0 || on.indexOf(pk) === 0);
       h2 += '<span class="opt' + (isLead ? " lead" : "") + '">' + esc(o.name) + "</span>";
     });
     return h2 + "</div>";
