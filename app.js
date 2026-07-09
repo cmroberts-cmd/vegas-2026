@@ -22,6 +22,30 @@
     (data.plan || []).forEach(function (p) { p.date = cleanDateish(p.date); });
     return data;
   }
+  // Chronological sort keys. Events keep their vote-options attached (they're sorted as a unit).
+  var MONTHS = { Jan: 1, Feb: 2, Mar: 3, Apr: 4, May: 5, Jun: 6, Jul: 7, Aug: 8, Sep: 9, Oct: 10, Nov: 11, Dec: 12 };
+  function dateKey_(d) {
+    var m = String(d || "").match(/([A-Za-z]{3})\s+(\d{1,2})/);
+    return m && MONTHS[m[1]] ? MONTHS[m[1]] * 100 + parseInt(m[2], 10) : 99999; // no/unknown date -> last
+  }
+  function timeKey_(t) {
+    var m = String(t || "").match(/(\d{1,2}):(\d{2})\s*([AaPp][Mm])?/);
+    if (!m) return 99999; // no start time -> end of its day
+    var h = parseInt(m[1], 10), mm = parseInt(m[2], 10), ap = (m[3] || "").toUpperCase();
+    if (ap === "PM" && h !== 12) h += 12;
+    if (ap === "AM" && h === 12) h = 0;
+    return h * 60 + mm;
+  }
+  function sortEvents_(events) {
+    events.forEach(function (ev, i) { ev._i = i; });
+    return events.slice().sort(function (a, b) {
+      var da = dateKey_(a.row.date), db = dateKey_(b.row.date);
+      if (da !== db) return da - db;
+      var ta = timeKey_(a.row.start || a.row.stop), tb = timeKey_(b.row.start || b.row.stop);
+      if (ta !== tb) return ta - tb;
+      return a._i - b._i; // stable: keep authored order on ties
+    });
+  }
   function hasEmoji(s) {
     try { return /\p{Extended_Pictographic}/u.test(s); }
     catch (e) { return /[☀-➿✈\uD83C-\uDBFF]/.test(s); }
@@ -209,7 +233,7 @@
       '<div class="sec-title"><h2>The Crew</h2><span class="rule"></span></div>' +
       renderCrew(data.travelers) +
       '<div class="sec-title"><h2>The Weekend</h2><span class="rule"></span></div>' +
-      '<div class="day">' + buildEvents(data.plan).map(renderEvent).join("") + "</div>" +
+      '<div class="day">' + sortEvents_(buildEvents(data.plan)).map(renderEvent).join("") + "</div>" +
       renderFooter(data.hero) +
       "</div>";
   }
