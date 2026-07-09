@@ -83,28 +83,25 @@
     if (menu) h += chip(menu, "Menu", "menu");
     return h + "</div>";
   }
+  // One unified "vote" component for every option group — with or without links.
   function renderOptions(options, parentRow) {
     if (!options.length) return "";
-    var hasLinks = options.some(function (o) { return o.website || o.menu; });
-    if (hasLinks) {
-      var h = '<div class="picks">';
-      options.forEach(function (o) {
-        h += '<div class="pick"><span class="pname">' + esc(o.name) + "</span>" +
-          (o.cuisine ? '<span class="pcuis">' + esc(o.cuisine) + "</span>" : "") +
-          '<span class="spacer"></span>' +
-          (o.website ? chip(o.website, "Site", "") : "") +
-          (o.menu ? chip(o.menu, "Menu", "menu") : "") + "</div>";
-      });
-      return h + "</div>";
-    }
     var pk = String(parentRow.place || "").toLowerCase().replace(/[^a-z]/g, "");
-    var h2 = '<div class="opts">';
+    var h = '<div class="picks-label">Pick one · vote in the chat</div><div class="picks">';
     options.forEach(function (o) {
       var on = String(o.name || "").toLowerCase().replace(/[^a-z]/g, "");
       var isLead = pk && on && (pk.indexOf(on) === 0 || on.indexOf(pk) === 0);
-      h2 += '<span class="opt' + (isLead ? " lead" : "") + '">' + esc(o.name) + "</span>";
+      h += '<div class="pick' + (isLead ? " lead" : "") + '">' +
+        '<span class="dot"></span>' +
+        '<span class="pname">' + esc(o.name) + "</span>" +
+        (o.cuisine ? '<span class="pcuis">' + esc(o.cuisine) + "</span>" : "") +
+        '<span class="spacer"></span>' +
+        (o.website ? chip(o.website, "Site", "") : "") +
+        (o.menu ? chip(o.menu, "Menu", "menu") : "") +
+        (isLead ? '<span class="leadtag">leaning</span>' : "") +
+        "</div>";
     });
-    return h2 + "</div>";
+    return h + "</div>";
   }
 
   function buildEvents(plan) {
