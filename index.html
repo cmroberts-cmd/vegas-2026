@@ -219,4 +219,7 @@
 
 <div id="app"><div class="loading">Loading the plan…</div></div>
 
-<script src="app.js"></script>
+<script>
+  /* Always fetch the latest renderer — prevents stale-cache mismatches */
+  (function () { var s = document.createElement("script"); s.src = "app.js?v=" + Date.now(); document.body.appendChild(s); })();
+</script>
