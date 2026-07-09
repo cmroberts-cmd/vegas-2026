@@ -29,7 +29,7 @@
     {
       "name": "Jake",
       "couple": "Jake & Mal",
-      "arrives": "7/16/2026",
+      "arrives": "Thu Jul 16",
       "arrivalTime": "20:21",
       "departs": "7/20/2026",
       "departureTime": "2:15:00 PM"
@@ -37,7 +37,7 @@
     {
       "name": "Mal",
       "couple": "Jake & Mal",
-      "arrives": "7/16/2026",
+      "arrives": "Thu Jul 16",
       "arrivalTime": "8:21:00 PM",
       "departs": "7/20/2026",
       "departureTime": "2:15:00 PM"
