@@ -9,24 +9,17 @@
     });
   }
   function firstToken(s) { return String(s || "").trim().split(/\s+/)[0] || ""; }
-  // Heal date/time cells that got exported as raw JS Date objects
-  // ("Sat Dec 30 1899 15:00:00 GMT-0700 (...)" -> "3:00 PM"; "Thu Jul 18 2026 ..." -> "Jul 18").
-  // Reads the wall-clock values straight from the string, so it's timezone-independent.
+  // Safety net for a DATE cell exported as a raw JS Date object ("Thu Jul 18 2026 ..." -> "Jul 18").
+  // Dates only: a date's day-of-month survives the export intact. TIMES are NOT healed here —
+  // Sheets shifts time-only values by ~1h on export, so a healed time would be wrong; times must
+  // come from the sheet via getDisplayValues(). A mangled time therefore shows loudly (not subtly).
   function cleanDateish(s) {
-    var m = String(s == null ? "" : s).match(/^[A-Za-z]{3} ([A-Za-z]{3}) (\d{2}) (\d{4}) (\d{2}):(\d{2}):/);
-    if (!m) return s;
-    var mon = m[1], day = String(parseInt(m[2], 10)), year = parseInt(m[3], 10), hh = parseInt(m[4], 10), mm = m[5];
-    if (year <= 1900) { var ap = hh < 12 ? "AM" : "PM"; var h = hh % 12; if (h === 0) h = 12; return h + ":" + mm + " " + ap; }
-    return mon + " " + day;
+    var m = String(s == null ? "" : s).match(/^[A-Za-z]{3} ([A-Za-z]{3}) (\d{2}) (\d{4}) \d{2}:\d{2}:/);
+    if (!m || parseInt(m[3], 10) < 2000) return s; // year<2000 => a time-only export, leave it loud
+    return m[1] + " " + String(parseInt(m[2], 10));
   }
   function normalizeDates_(data) {
-    (data.travelers || []).forEach(function (t) {
-      t.arrivalTime = cleanDateish(t.arrivalTime);
-      t.departureTime = cleanDateish(t.departureTime);
-    });
-    (data.plan || []).forEach(function (p) {
-      p.date = cleanDateish(p.date); p.start = cleanDateish(p.start); p.stop = cleanDateish(p.stop);
-    });
+    (data.plan || []).forEach(function (p) { p.date = cleanDateish(p.date); });
     return data;
   }
   function hasEmoji(s) {
@@ -198,6 +191,7 @@
       (hero.homeBase ? '<p class="homebase">Home base — <b>' + esc(hero.homeBase) + "</b></p>" : "") +
       (hero.occasion ? '<p class="occasion">' + esc(hero.occasion) + "</p>" : "") +
       '<div class="count"><span class="n" id="cd">—</span> <span class="lbl" id="cdl">sleeps till Vegas</span></div>' +
+      '<p class="tznote">🕒 All times shown in Las Vegas time (PT)</p>' +
       "</header>";
   }
 
